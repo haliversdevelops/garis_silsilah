@@ -1,0 +1,5 @@
+.auth-login-inner .auth-form h1,
+.auth-register-inner .auth-form h1{
+    font-variation-settings: 'wght' 900;
+    color: black;
+}
