@@ -13,12 +13,20 @@
 
 Route::get('/', 'UsersController@search');
 
+Route::get('admin', 'AdminController@user')->name('admin.index');
+Route::get('/admin/user', 'AdminController@user')->name('admin.user.index');
+Route::post('/admin/user', 'AdminController@userStore')->name('admin.user.store');
+Route::get('/admin/{user}/edit', 'AdminController@userEdit')->name('admin.user.edit');
+Route::post('/admin/{user}/update', 'AdminController@userUpdate')->name('admin.user.update');
+Route::delete('/admin/{user}', 'AdminController@userDestroy')->name('admin.user.destroy');
+
 Auth::routes();
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('password/change', 'Auth\ChangePasswordController@show')->name('password_change');
     Route::post('password/change', 'Auth\ChangePasswordController@update')->name('password_update');
 });
+
 
 Route::get('home', 'HomeController@index')->name('home');
 Route::get('profile', 'HomeController@index')->name('profile');

@@ -24,7 +24,7 @@
     <div id="app" >
         @include('layouts.partials.nav')
 
-        <div class="container-fluid" style="width:auto;overflow-x:auto;">
+        <div class="container" style="width:auto;overflow-x:auto;">
         @yield('content')
         </div>
     </div>

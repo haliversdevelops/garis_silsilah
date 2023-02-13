@@ -35,7 +35,7 @@ class UsersController extends Controller
 
         return view('users.search', compact('users'));
     }
-
+    
     /**
      * Display the specified User.
      *

@@ -1,0 +1,214 @@
+@font-face {
+  font-family: 'UbuntuLight';
+  src: url("../fonts/Ubuntu/Ubuntu-Light.ttf");
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url("../fonts/Ubuntu/Ubuntu-Regular.ttf");
+}
+
+@font-face {
+  font-family: 'UbuntuBold';
+  src: url("../fonts/Ubuntu/Ubuntu-Bold.ttf");
+}
+
+body {
+  font-family: 'Ubuntu';
+  overflow-x: hidden;
+  background: #F7F8FC;
+}
+
+.main-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.sidebar-wrapper {
+  min-height: 100vh;
+  margin-left: -240px;
+  background-color: #FFF;
+  -webkit-transition: margin .25s ease-out;
+  transition: margin .25s ease-out;
+}
+
+.sidebar-logo {
+  padding: 0.5rem 1rem;
+  width: 240px;
+  background-color: transparent;
+}
+
+.sidebar-profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 30px 15px;
+  /* background-color: #264078; */
+}
+
+.sidebar-profile .profile-info {
+  margin: 0 15px;
+}
+
+.sidebar-profile .profile-info .username {
+  font-family: 'UbuntuBold';
+  color: #000;
+}
+
+.sidebar-profile .profile-info .level {
+  font-family: 'Ubuntu';
+  color: #000;
+}
+
+.sidebar-menu {
+  width: 240px;
+}
+
+.sidebar-menu .nav-item.active .nav-link {
+  margin: 5px 15px;
+  background-color: #264078;
+  color: #FFF;
+  border-radius: 4px;
+}
+
+.sidebar-menu .nav-link {
+  padding: 10px 15px;
+  color: #000;
+  margin: 5px 15px;
+}
+
+.sidebar-menu .nav-link:hover {
+  color: #4d5973;
+  border-radius: 4px;
+}
+
+.main-content {
+  min-width: 100vw;
+}
+
+.main-header .navbar {
+  background: #FFF;
+  padding: .5rem 1rem;
+  border: none;
+}
+
+.main-header .nav-link i {
+  font-size: 18px;
+  color: #bba8bff5;
+}
+
+.main-header .navbar-search {
+  margin-left: 15px;
+}
+
+.main-header .navbar-search .btn {
+  background-color: #264078;
+  color: #FFF;
+}
+
+.main-header .navbar-search input {
+  border-color: #e8e9ed;
+  border-radius: 4px;
+}
+
+.main-body {
+  margin: 15px;
+}
+
+.main-body .breadcrumb {
+  background-color: transparent;
+}
+
+.main-body .table-area {
+  background-color: #FFF;
+  border-radius: 4px;
+  padding: 15px;
+}
+
+.main-body .create-post-area {
+  background-color: #FFF;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+.main-body .create-post-area .form-group .form-control {
+  border: 1px solid #F1F2F3;
+  height: 45px;
+}
+
+.main-body .create-post-area .form-group .form-control.nice-select {
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.main-body .create-post-area .form-group .form-control.nice-select .list {
+  width: 100%;
+}
+
+.main-body .main-dashboard .c-1 {
+  background-image: linear-gradient(150deg, #ffbf96, #fe7096) !important;
+  border-color: #ffbf96;
+}
+
+.main-body .main-dashboard .c-2 {
+  background-image: linear-gradient(150deg, #90caf9, #047edf 99%) !important;
+  border-color: #90caf9;
+}
+
+.main-body .main-dashboard .c-3 {
+  background-image: linear-gradient(150deg, #84d9d2, #07cdae) !important;
+  border-color: #84d9d2;
+}
+
+.main-body .main-dashboard .c-4 {
+  background-image: linear-gradient(150deg, #f6e384, #ffd500) !important;
+  border-color: #f6e384;
+}
+
+.main-wrapper.toggled .sidebar-wrapper {
+  margin-left: 0;
+}
+
+@media (min-width: 768px) {
+  .sidebar-wrapper {
+    margin-left: 0;
+  }
+  .main-wrapper.toggled .sidebar-wrapper {
+    margin-left: -240px;
+  }
+  .main-header .navbar-search {
+    width: 768px;
+  }
+  .main-content {
+    min-width: 0;
+    width: 100%;
+  }
+  .main-header .navbar-nav {
+    margin-left: auto;
+  }
+  .main-header .nav-item {
+    margin-left: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-header .navbar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .main-header .navbar-search {
+    width: 300px;
+  }
+  .main-header .navbar-nav {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .main-header .nav-item {
+    margin-left: 15px;
+  }
+}
+/*# sourceMappingURL=admin.css.map */
