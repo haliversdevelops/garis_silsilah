@@ -13,7 +13,7 @@
 
 Route::get('/', 'UsersController@search');
 
-Route::get('admin', 'AdminController@user')->name('admin.index');
+Route::get('admin', 'AdminController@dashboard')->name('admin.dashboard');
 Route::get('/admin/user', 'AdminController@user')->name('admin.user.index');
 Route::post('/admin/user', 'AdminController@userStore')->name('admin.user.store');
 Route::get('/admin/{user}/edit', 'AdminController@userEdit')->name('admin.user.edit');
@@ -66,6 +66,8 @@ Route::group(['middleware' => 'admin'], function () {
     /**
      * Backup Restore Database Routes
      */
+    
+
     Route::post('backups/upload', ['as' => 'backups.upload', 'uses' => 'BackupsController@upload']);
     Route::post('backups/{fileName}/restore', ['as' => 'backups.restore', 'uses' => 'BackupsController@restore']);
     Route::get('backups/{fileName}/dl', ['as' => 'backups.download', 'uses' => 'BackupsController@download']);

@@ -18,7 +18,7 @@
 <div class="main-wrapper">
   <div class="sidebar-wrapper">   
     <div class="sidebar-logo">
-      <a href="{{ route('admin.index') }}" class="navbar-brand">garis_silsilah</a> 
+      <a href="{{ route('admin.dashboard') }}" class="navbar-brand">garis_silsilah</a> 
     </div>
     <div class="sidebar-profile">
       <div class="profile-img">
@@ -32,7 +32,7 @@
     <div class="sidebar-menu">
       <ul class="navbar-nav">
         <li class="nav-item {{ request()->path() == 'admin' || request()->path() == 'admin' ? 'active' : ''}}">
-          <a href="{{ route('admin.index') }}" class="nav-link"><i class="ion ion-md-pie"></i> Dashboard</a>
+          <a href="{{ route('admin.dashboard') }}" class="nav-link"><i class="ion ion-md-pie"></i> Dashboard</a>
         </li>
         <li class="nav-item {{ request()->path() == 'admin/user' || request()->path() == 'admin/user' ? 'active' : ''}}">
           <a href="{{ route('admin.user.index') }}" class="nav-link">User</a>
