@@ -4,7 +4,7 @@
 
 @section('user-content')
 
-<div class="tree" style="margin:auto">
+<div class="tree" style="margin:auto;display:flex;">
     <ul id="ul1">
         <li>
         <div class="label1" style="display:flex;height:180px;width:130px;margin:auto;padding:10px 20px;border:2px solid #EACE56;border-radius: 50px">
