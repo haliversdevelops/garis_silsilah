@@ -2,7 +2,7 @@
 
 @section('content')
 </div>
-<div class="container-fluid">
+<div class="container">
     @include('users.partials.action-buttons', ['user' => $user])
     <h2 class="page-header">
         {{ $user->name }} <small>@yield('subtitle')</small>
