@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<h2 class="page-header text-center mt-4">
+<h2 class="page-header text-center mt-4 mb-4">
     {{ trans('app.search_your_family') }}
     @if (request('q'))
     <small class="pull-right">{!! trans('app.user_found', ['total' => $users->total(), 'keyword' => request('q')]) !!}</small>
