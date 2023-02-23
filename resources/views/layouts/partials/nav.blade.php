@@ -1,8 +1,8 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-info" style="display:flex; border-radius:10px">
+<nav class="navbar navbar-expand-lg bg-info d-flex">
     <div class="container">
         <div class="navbar-header">
             <!-- Branding Image -->
-            <a class="navbar-brand mb-0 h1" href="{{ url('/') }}">
+            <a class="navbar-brand mb-0 text-white" href="{{ url('/') }}">
                 {{ config('app.name', 'Laravel') }}
             </a>
             <!-- Collapsed Hamburger --> 
@@ -22,7 +22,7 @@
                     <a href="{{ route('register') }}" class="btn btn-info btn-md" style="border-radius:15px; margin-right: 5px">{{ __('app.signup') }}</a>
                 @else
                     <li class="dropdown">
-                        <a class="btn btn btn-info dropdown-toggle" data-toggle="dropdown" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="btn btn btn-info dropdown-toggle text-white" data-toggle="dropdown" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             {{ Auth::user()->name }}
                         </a>
 
@@ -47,7 +47,7 @@
                     </li>
                 @endif
                 <li class="dropdown">
-                    <a class="btn btn-info dropdown-toggle" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="btn btn-info dropdown-toggle text-white" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         {{ __('app.languange') }}
                         <span class="caret"></span>          
                     </a>

@@ -36,7 +36,7 @@
                         {!! $user->age_string !!}
                     @endif
                 </div>
-                <div class="">
+                <div class="mb-4">
                     <h3 class="card-title">{{ $user->profileLink() }} ({{ $user->gender }})</h3>
                     <div>{{ trans('user.nickname') }} : {{ $user->nickname }}</div>
                     <hr style="margin: 5px 0;">

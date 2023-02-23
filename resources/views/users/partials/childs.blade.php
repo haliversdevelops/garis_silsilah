@@ -4,7 +4,9 @@
         <form id="list">
         @can ('edit', $user)
         @endcan
-        <h3 class="panel-title">{{ __('user.childs') }} ({{ $user->childs->count() }})</h3>
+        <h3 class="panel-title">{{ __('user.childs') }} ({{ $user->childs->count() }}) 
+        {{ link_to_route('users.show', __('user.add_child'), [$user->id, 'action' => 'add_child'], ['class' => 'btn btn-info btn-sm', 'style' => 'margin-left:503px']) }}
+        </h3>
     </div>
     <ul id="childs1" value="childs1" class="list-group">
         @forelse($user->childs as $child)
@@ -54,11 +56,5 @@
         @endif
         @endcan
     </ul>
-    <p></p>
-    @can ('edit', $user)
-    <div class="pull-right" style="margin:10px; margin-left:625px;"> 
-            {{ link_to_route('users.show', __('user.add_child'), [$user->id, 'action' => 'add_child'], ['class' => 'btn btn-info btn-sm']) }}
-    </div>
-    @endcan
 </div>
 <hr>
