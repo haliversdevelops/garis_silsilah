@@ -11,7 +11,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     @yield('ext_css')
     <style>
@@ -20,8 +20,8 @@
     }
     </style>
 </head>
-<body>
-    <div id="app" >
+<body class="bg-light">
+    <div id="app">
         @include('layouts.partials.nav')
 
         <div class="container" style="width:auto;overflow-x:auto;">
@@ -31,6 +31,8 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery-3.4.1.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>
     @yield('ext_js')
     @yield('script')
     <script>
@@ -49,4 +51,8 @@
         $('title').prepend(str+" - ");
     </script>
 </body>
+<footer>
+    <br>
+    <br>
+    </footer>
 </html>

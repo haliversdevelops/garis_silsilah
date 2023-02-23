@@ -1,11 +1,8 @@
-<div class="panel panel-default">
+<div class="panel panel-default" style="display:block">
     <div class="panel-heading">
+        <hr>
         <form id="list">
         @can ('edit', $user)
-        <div class="pull-right" style="margin: -3px -6px"> 
-            {{ link_to_route('users.show', __('user.add_child'), [$user->id, 'action' => 'add_child'], ['class' => 'btn btn-success btn-xs']) }}
-           
-        </div>
         @endcan
         <h3 class="panel-title">{{ __('user.childs') }} ({{ $user->childs->count() }})</h3>
     </div>
@@ -57,4 +54,11 @@
         @endif
         @endcan
     </ul>
+    <p></p>
+    @can ('edit', $user)
+    <div class="pull-right" style="margin:10px; margin-left:625px;"> 
+            {{ link_to_route('users.show', __('user.add_child'), [$user->id, 'action' => 'add_child'], ['class' => 'btn btn-info btn-sm']) }}
+    </div>
+    @endcan
 </div>
+<hr>

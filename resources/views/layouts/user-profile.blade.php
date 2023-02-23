@@ -2,6 +2,7 @@
 
 @section('content')
     @include('users.partials.action-buttons', ['user' => $user])
+    &nbsp
     <h2 class="page-header">
         {{ $user->name }} <small>@yield('subtitle')</small>
     </h2>

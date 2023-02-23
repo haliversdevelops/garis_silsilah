@@ -21,7 +21,7 @@
     <tbody>
         @foreach($users as $user)
         <tr>
-            <td>{{ $loop->first + 1 }}</td>
+            <td>{{ $loop->first }}</td>
             <td>{{ $user->nickname }}</td>
             <td>{{ $user->email }}</td>
             <td>{{ $user->dob }}</td>
@@ -57,26 +57,26 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title fs-5" id="add">Tambah</h5>
+                    <h5 class="modal-title fs-5" id="confirm">Tambah</h5>
                     <button type="button" class="btn btn-sm btn-close" data-dismiss="modal" aria-label="Close"><i class="ti-close"></i></button>
                 </div>
                 <div class="modal-body p-4">
-                    <ul class="nav nav-tabs nav-justified" id="add-tab" role="tablist">
+                    <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
                         <li class="nav-item">
-                            <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile-add" role="tab" aria-controls="profile-add" aria-selected="true">Profil</a>
+                            <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="true">Profil</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact-add" role="tab" aria-controls="contact-add" aria-selected="false">Kontak</a>
+                            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Kontak</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="account-tab" data-toggle="tab" href="#account-add" role="tab" aria-controls="account-add" aria-selected="false">Akun</a>
+                            <a class="nav-link" id="account-tab" data-toggle="tab" href="#account" role="tab" aria-controls="account" aria-selected="false">Akun</a>
                         </li>
                     </ul>
-                    <div class="tab-content py-4" id="tab-add">
+                    <div class="tab-content py-4" id="tab">
                         <form method="POST" action="{{ route('admin.user.store') }}">
                         @csrf      
                         
-                        <div class="tab-pane fade show active" id="profile-add" role="tabpanel" aria-labelledby="profile-tab">
+                        <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                             <div class="form-group">
                                 <input type="text" class="form-control" name="name" placeholder="Nama">
                             </div>
@@ -105,7 +105,7 @@
                                 <small>Format jpeg,png,jpg,gif, maks: 2048 Kb.</small>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="contact-add" role="tabpanel" aria-labelledby="contact-tab">
+                        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                             <div class="form-group">
                                 <input type="number" name="phone" class="form-control"  id="" placeholder="Nomor Telepon"></input>
                             </div>
@@ -116,7 +116,7 @@
                                 <textarea name="address" class="form-control" id="" placeholder="Alamat"></textarea>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="account-add" role="tabpanel" aria-labelledby="account-tab">
+                        <div class="tab-pane fade" id="account" role="tabpanel" aria-labelledby="account-tab">
                             <div class="form-group">
                                 <input type="email" name="email" class="form-control" id="" placeholder="Email"></input>
                             </div>
@@ -125,7 +125,7 @@
                             </div>
                         </div>
                         <div class="">
-                            <button type="submit" class="btn btn-primary">Tambah</button>
+                            <button type="submit" class="btn btn-success">Update</button>
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
                         </div>
                         </form>
@@ -135,32 +135,32 @@
                 </div>
             </div>
         </div>
-        <div class="modal fade" id="edit{{$user->id}}" value="{{ $user->id }}" tabindex="-1" role="dialog">
+        <div class="modal fade" id="edit{{ $user->id }}" value="{{ $user->id }}" tabindex="-1" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title fs-5" id="edit{{$user->id}}">Edit</h5>
+                    <h5 class="modal-title fs-5" id="confirm">{{ $user->id ? 'Edit' : 'Tambah'}}</h5>
                     <button type="button" class="btn btn-sm btn-close" data-dismiss="modal" aria-label="Close"><i class="ti-close"></i></button>
                 </div>
                 <div class="modal-body p-4">
-                    <ul class="nav nav-tabs nav-justified" id="edit-tab" role="tablist">
+                    <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
                         <li class="nav-item">
-                            <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile{{ $user->id }}" role="tab" aria-controls="profile{{ $user->id }}" aria-selected="true">Profil</a>
+                            <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="true">Profil</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact{{ $user->id }}" role="tab" aria-controls="contact{{ $user->id }}" aria-selected="false">Kontak</a>
+                            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Kontak</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="account-tab" data-toggle="tab" href="#account{{ $user->id }}" role="tab" aria-controls="account{{ $user->id }}" aria-selected="false">Akun</a>
+                            <a class="nav-link" id="account-tab" data-toggle="tab" href="#account" role="tab" aria-controls="account" aria-selected="false">Akun</a>
                         </li>
                     </ul>
-                    <div class="tab-content py-4" id="tab-edit">
+                    <div class="tab-content py-4" id="tab">
                         <form method="POST" action="{{ route('admin.user.update', $user->id) }}">
                         @csrf      
                         
-                        <div class="tab-pane fade show active" id="profile{{ $user->id }}" role="tabpanel" aria-labelledby="profile-tab">
+                        <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                             <div class="form-group">
-                                <input type="text" class="form-control" name="name" value="{{ $user->id ? $user->name : ''}}" placeholder="Nama">
+                                <input type="text" class="form-control" name="name" value="{{ $user->name}}" placeholder="Nama">
                             </div>
                             <div class="form-group">
                                 <input type="text" class="form-control" name="nickname" value="{{ $user->nickname}}" placeholder="Nama Panggilan">
@@ -187,7 +187,7 @@
                                 <small>Format jpeg,png,jpg,gif, maks: 2048 Kb.</small>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="contact{{ $user->id }}" role="tabpanel" aria-labelledby="contact-tab">
+                        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                             <div class="form-group">
                                 <input type="number" name="phone" value="{{ $user->phone }}" class="form-control"  id="" placeholder="Nomor Telepon"></input>
                             </div>
@@ -198,7 +198,7 @@
                                 <textarea name="address" class="form-control" id="" placeholder="Alamat"></textarea>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="account{{ $user->id }}" role="tabpanel" aria-labelledby="account-tab">
+                        <div class="tab-pane fade" id="account" role="tabpanel" aria-labelledby="account-tab">
                             <div class="form-group">
                                 <input type="email" name="email" value="{{ $user->email }}" class="form-control" id="" placeholder="Email"></input>
                             </div>

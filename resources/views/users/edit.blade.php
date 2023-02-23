@@ -10,29 +10,35 @@
         </div>
     @endcan
 @else
-    >
-        {{ link_to_route('users.show', __('app.show_profile').' '.$user->name, [$user->id], ['class' => 'btn btn-default']) }}
+        <p></p>
+        {{ link_to_route('users.show', __('app.show_profile').' '.$user->name, [$user->id], ['class' => 'btn btn-primary']) }}
     </div>
-    <h2 class="page-header">
-        {{ __('user.edit') }} {{ $user->profileLink() }}
-    </h2>
+    <hr>
+    <div class="container">
+        <h2 class="page-header">
+            {{ __('user.edit') }} {{ $user->profileLink() }}
+        </h2>
+        <hr>
     <div class="row">
-        <div class="col-md-2">@include('users.partials.edit_nav_tabs')</div>
-        <div class="col-md-10">
+        <div class="col-md-6" style="display:flex">@include('users.partials.edit_nav_tabs')</div>
+        <div class="col-md-10" style="margin-left:10px">
             <div class="row">
                 {{ Form::model($user, ['route' => ['users.update', $user->id], 'method' =>'patch', 'autocomplete' => 'off']) }}
-                <div class="col-md-6">
+                <div class="col-md-12">
                     @includeWhen(request('tab') == null || !in_array(request('tab'), $validTabs), 'users.partials.edit_profile')
                     @includeWhen(request('tab') == 'death', 'users.partials.edit_death')
                     @includeWhen(request('tab') == 'contact_address', 'users.partials.edit_contact_address')
                     @includeWhen(request('tab') == 'login_account', 'users.partials.edit_login_account')
-                    <div class="text-right">
+                    &nbsp
+                    <div class="text-left">
                         {{ Form::submit(__('app.update'), ['class' => 'btn btn-primary']) }}
-                        {{ link_to_route('users.show', __('app.cancel'), [$user->id], ['class' => 'btn btn-default']) }}
+                        {{ link_to_route('users.show', __('app.cancel'), [$user->id], ['class' => 'btn btn-primary']) }}
                     </div>
+                    <br>
+                    <br>
                 </div>
                 {{ Form::close() }}
-                <div class="col-md-6">
+                <div class="col-md-6" style="padding-left:150px">
                     @includeWhen(request('tab') == null || !in_array(request('tab'), $validTabs), 'users.partials.update_photo')
                     @if (request('tab') == 'death')
                         <div id="mapid"></div>
@@ -40,6 +46,7 @@
                 </div>
             </div>
         </div>
+    </div> 
     </div>
 @endif
 @endsection

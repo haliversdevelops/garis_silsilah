@@ -25,7 +25,9 @@
                             </div>
                         @endif
                     @else
+                    <div style="margin-left:12px">
                         {{ $user->fatherLink() }}
+                    </div>
                     @endcan
                 </td>
             </tr>
@@ -51,7 +53,9 @@
                             </div>
                         @endif
                     @else
+                    <div style="margin-left:12px">
                         {{ $user->motherLink() }}
+                    </div>
                     @endcan
                 </td>
             </tr>
@@ -65,9 +69,10 @@
                         @endunless
                     </div>
                     @endcan
-
                     @if ($user->parent)
+                    <div style="margin-left:12px">
                     {{ $user->parent->husband->name }} & {{ $user->parent->wife->name }}
+                    </div>
                     @endif
 
                     @can('edit', $user)
@@ -96,7 +101,9 @@
                     @if ($user->wifes->isEmpty() == false)
                         <ul class="list-unstyled">
                             @foreach($user->wifes as $wife)
+                            <div style="margin-left:12px">
                             <li>{{ $wife->profileLink() }}</li>
+                            </div>
                             @endforeach
                         </ul>
                     @endif
