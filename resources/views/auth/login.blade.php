@@ -3,8 +3,8 @@
 @section('content')
 <div class="auth-login-inner">
     <div class="row">
-        <div class="col-md-4">
-            <div class="auth-form" style="position:relative;height: 100vh">
+        <div class="col-md-4 px-0">
+            <div class="auth-form bg-white" style="position:relative;height: 100vh">
                 <div style="position:absolute;top:50%;left: 50%;transform: translate(-50%,-50%);width:100%;padding: 0px 50px;">
                     <h1 class="text-center title">{{ __('app.signin') }}</h1>
                     <form class="form-horizontal" role="form" method="POST" action="{{ route('login') }}">
@@ -53,7 +53,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-8" style="padding:0;">
+        <div class="col-md-8 px-0">
             <div class="auth-bg" style="background: url('images/bg.jpg') no-repeat;height: 100vh;background-size: cover;">
             </div>
         </div>
